@@ -130,5 +130,5 @@ def def_enum_struct_with_index(module_name, enum_hash, index_name: :index, displ
 
   define_enum_methods(m, enum_index_hash, enum_display_hash)
 
-  Kernel.const_set(module_name, m)
+  const_set(module_name, m)
 end
