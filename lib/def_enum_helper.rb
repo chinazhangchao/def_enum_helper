@@ -82,7 +82,7 @@ end
 def define_subscript_method(m, enum_index_hash, enum_display_hash)
   divisor = enum_index_hash.count
 
-  m.define_singleton_method(:from_number) { |n| (n - DEFAULT_ENUM_BASE_INDEX) % divisor + DEFAULT_ENUM_BASE_INDEX }
+  # m.define_singleton_method(:from_number) { |n| (n - DEFAULT_ENUM_BASE_INDEX) % divisor + DEFAULT_ENUM_BASE_INDEX }
   m.define_singleton_method(:[]) do |k|
     case k
     when String
@@ -90,7 +90,7 @@ def define_subscript_method(m, enum_index_hash, enum_display_hash)
     when Symbol
       enum_index_hash[const_get(k)]
     else
-      enum_index_hash[from_number(k)]
+      enum_index_hash[k]
     end
   end
 end
