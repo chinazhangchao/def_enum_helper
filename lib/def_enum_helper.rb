@@ -88,7 +88,12 @@ def define_subscript_method(m, enum_index_hash, enum_display_hash)
     when String
       enum_display_hash[k]
     when Symbol
-      enum_index_hash[const_get(k)]
+      index = if self.is_a?(Module)
+        const_get(k)
+      else
+        Kernel.const_get(k)
+      end
+      enum_index_hash[index]
     else
       enum_index_hash[k]
     end
@@ -130,5 +135,9 @@ def def_enum_struct_with_index(module_name, enum_hash, index_name: :index, displ
 
   define_enum_methods(m, enum_index_hash, enum_display_hash)
 
-  const_set(module_name, m)
+  if self.is_a?(Module)
+    const_set(module_name, m)
+  else
+    Kernel.const_set(module_name, m)
+  end
 end
