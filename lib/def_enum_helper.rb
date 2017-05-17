@@ -75,6 +75,7 @@ end
 
 def define_iterator_methods(m, enum_index_hash)
   m.define_singleton_method(:each) { |&blk| enum_index_hash.each_value { |v| blk.call(v) } }
+  m.define_singleton_method(:map) { |&blk| enum_index_hash.values.map { |v| blk.call(v) } }
 
   m.define_singleton_method(:all) { enum_index_hash.values }
 end
