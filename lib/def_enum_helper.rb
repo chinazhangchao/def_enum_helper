@@ -16,6 +16,7 @@ require "def_enum_helper/version"
 # YinYang.all           # 所有枚举的struct array [#<struct index=1, display="阳">, # <struct index=2, display="阴">]
 # puts YinYang.count    # 2
 # YinYang.each{|x| puts x}  # <struct index=1, display="阳"> #<struct index=2, display="阴">
+# YinYang.map{|x| x}        # [#<struct  index=1, display="阳">, #<struct  index=2, display="阴">]
 # puts YinYang.to_hash_array # [{:index=>1, :display=>"阳"}, {:index=>2, :display=>"阴"}]
 # puts YingYang.to_json_array  # [{"index":1,"display":"阳"},{"index":2,"display":"阴"}]
 
