@@ -79,6 +79,7 @@ def define_iterator_methods(m, enum_index_hash)
   m.define_singleton_method(:map) { |&blk| enum_index_hash.values.map { |v| blk.call(v) } }
 
   m.define_singleton_method(:all) { enum_index_hash.values }
+  m.define_singleton_method(:keys) { enum_index_hash.keys }
 end
 
 def define_subscript_method(m, enum_index_hash, enum_display_hash)
