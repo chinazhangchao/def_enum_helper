@@ -18,9 +18,9 @@ Style/Documentation:
   Enabled: false
 Lint/AmbiguousRegexpLiteral:
   Enabled: false
-Lint/DefEndAlignment:
+Layout/DefEndAlignment:
   AutoCorrect: true
-Lint/EndAlignment:
+Layout/EndAlignment:
   AutoCorrect: true
 Style/BracesAroundHashParameters:
   Enabled: false
